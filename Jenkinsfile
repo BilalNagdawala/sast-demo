@@ -25,7 +25,7 @@ pipeline {
                     withCredentials([
                         string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')
                     ]) {
-                        bat 'mvn sonar:sonar'
+                        bat 'mvn sonar:sonar -Dsonar.token=%SONAR_TOKEN%'
                     }
                 }
             }

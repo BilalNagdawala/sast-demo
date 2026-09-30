@@ -22,7 +22,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    bat 'mvn sonar:sonar -Dsonar.projectKey=sast-demo -Dsonar.projectName=SAST-Demo'
+                    bat 'mvn sonar:sonar'
                 }
             }
         }
